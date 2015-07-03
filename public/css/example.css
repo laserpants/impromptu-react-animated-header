@@ -1,0 +1,39 @@
+body { 
+    font-family: "Lato", sans-serif; 
+}
+
+section {
+    min-height: 600px;
+    padding: 7em 4em;
+}
+
+a {
+   outline: 0;
+}
+
+h1 {
+    font-size: 2.1em;
+    color: #404040;
+    margin-bottom: .8em;
+    text-align: center;
+}
+
+p {
+    color: #545454;
+    line-height: 150%;
+}
+
+.image-container {
+    text-align: center;
+    margin: 2em 0;
+}
+
+.nav-logo.nav-logo-compact {
+    font-size: 1.3em;
+}
+
+hr {
+    border-top: 1px solid #c2c2c2;
+    border-bottom: none;
+    margin-bottom: 2em;
+}
