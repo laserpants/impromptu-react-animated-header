@@ -109,7 +109,7 @@ $ browserify -t reactify main.js -o bundle.js
 
 ## Styling
 
-The included stylesheet is pretty rudimentary. Typically, you'd want to, at least, overridea the default font and align the colors with those used in your application.
+The included stylesheet is pretty rudimentary. Typically, you'd want to, at least, override the default font and align the colors with the rest of your application.
 
 ```html
 <link href="//cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" rel="stylesheet">
