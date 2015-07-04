@@ -9,7 +9,7 @@ Responsive nav header component for React.
 ## Installation
 
 ```bash
-$ npm install react-snabbt install impromptu-react-animated-header
+$ npm install impromptu-react-animated-header
 ```
 
 Copy CSS files and icons to build location.
