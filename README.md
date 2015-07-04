@@ -2,9 +2,7 @@
 
 A responsive nav header component for React.
 
-Try before you browserify:
-
-* http://johanneshilden.github.io/impromptu-react-animated-header/
+Try before you browserify: http://johanneshilden.github.io/impromptu-react-animated-header/
 
 ## Installation
 
@@ -22,7 +20,15 @@ $ cp -r node_modules/impromptu-react-animated-header/css/ node_modules/impromptu
 
 ## How to use
 
-Lay out the menu using the `<TopMenu>` and `<MenuItem>` components. An optional `<MenuBrand>` can be included before the menu items.
+Include the module.
+
+```
+var TopMenu   = require('impromptu-react-animated-header').TopMenu;
+var MenuItem  = require('impromptu-react-animated-header').MenuItem;
+var MenuBrand = require('impromptu-react-animated-header').MenuBrand;
+```
+
+Lay out the menu using the `<TopMenu>` and `<MenuItem>` components. An optional `<MenuBrand>` can be included prior to the menu items.
 
 ```
 <TopMenu>
@@ -141,44 +147,21 @@ The included stylesheet is pretty rudimentary. Typically, you'd want to, at leas
 </style>
 ```
 
-The examples include a more complete [themed version](http://johanneshilden.github.io/impromptu-react-animated-header/public/themed.html) of the navbar, using the following stylesheet.
-
-```CSS
-/* theme.css */
-
-header {
-    background-color: #ff00ff;
-}
-
-.nav-collapse.nav-full ul, 
-.nav-collapse.nav-full a {
-    border: none;
-}
-
-.nav-collapse.nav-compact a {
-    background-color: #ff00ff;
-    border-bottom: none !important;
-    border-top: 1px solid rgba(255, 255, 255, 0.5) !important;
-}
-
-.nav-collapse a:active,
-.nav-collapse .active a {
-    background: rgba(255, 255, 255, 0.4);
-}
-```
+The examples include a more complete [themed version](http://johanneshilden.github.io/impromptu-react-animated-header/public/themed.html) of the navbar, using the [theme.css](https://github.com/johanneshilden/impromptu-react-animated-header/blob/master/public/css/theme.css) stylesheet.
 
 ## Props
 
+`TopMenu` supports a number of props:
+
 | Property         | Type                     | Description   | Default      | 
 | ---------------- | ------------------------ | ------------- | ------------ |
-| `align`          | 'left' | 'right'         | Horizontal alignment of the menu. |
+| `align`          | 'left'&nbsp;&vert;&nbsp;'right'         | Horizontal alignment of the menu. | 'left'
+| `brandAlign`     | 'left'&nbsp;&vert;&nbsp;'right'         | Position of the logo, if one is used. | 'left'
 | `autoClose`      | Boolean                  | Controls whether the menu should automatically close when an item is clicked.      | true      |
 | `threshold`      |  Number                  | Collapse breakpoint: A viewport width less than this value will cause the navbar to collapse (in pixels). | 769    |
-| `cssTransitions` |  Boolean                 | Apply CSS classes for transitions? | false  |
+| `cssTransitions` |  Boolean                 | Apply CSS classes for transitions? (See [examples](http://johanneshilden.github.io/impromptu-react-animated-header/public/default.html)) | false  |
 | `animate`        |  Boolean                 | Animate opening and closing of the menu in collapsed mode? | true   |
 | `duration`       |  Number                  | Duration of the anmation, in milliseconds. | 300    |
-
-### CSS Transitions
 
 ## Contribute
 
