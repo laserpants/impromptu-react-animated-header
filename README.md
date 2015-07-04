@@ -126,9 +126,11 @@ The included stylesheet is pretty rudimentary. Typically, you'd want to, at leas
         background-color: #3ea1aa;         /* Background of drop-down in collapsed mode */
     }
     .nav-collapse.nav-full ul, 
-    .nav-collapse.nav-full a,
-    .nav-collapse.nav-compact a {
+    .nav-collapse.nav-full a {
         border-color: #5ec1ca !important;  /* Divider lines */
+    }
+    .nav-collapse.nav-compact a {
+        border-color: #4eb1ba !important;  /* Horizontal divider in collapsed menu */
     }
     .nav-collapse a:active,
     .nav-collapse .active a {
