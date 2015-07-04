@@ -52,7 +52,7 @@ var MenuBrand = require('impromptu-react-animated-header').MenuBrand;
 var MyMenu = React.createClass({
     render: function() {
         return (
-            <TopMenu cssTransitions={true}>
+            <TopMenu>
                 <MenuBrand>
                     <a data-scroll href="#home">Navigation</a>
                 </MenuBrand>
@@ -84,6 +84,17 @@ $ browserify -t reactify main.js -o bundle.js
 ```
 
 ## Styling
+
+```
+    <link href="//cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" rel="stylesheet">
+    <link href="css/impromptu-header.min.css" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+    <style type="text/css" rel="stylesheet">
+        body { 
+            font-family: "Lato", sans-serif; 
+        }
+    </style>
+```
 
 ## Props
 
