@@ -8,6 +8,8 @@ Responsive nav header component for React.
 
 ## Installation
 
+Npm is the recommended install method.
+
 ```bash
 $ npm install impromptu-react-animated-header
 ```
