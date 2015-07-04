@@ -141,30 +141,6 @@ The included stylesheet is pretty rudimentary. Typically, you'd want to, at leas
 
 The examples include a more complete [themed version](http://johanneshilden.github.io/impromptu-react-animated-header/public/themed.html) of the navbar, using the [theme.css](https://github.com/johanneshilden/impromptu-react-animated-header/blob/master/public/css/theme.css) stylesheet.
 
-```CSS
-/* theme.css */
-
-header {
-    background-color: #ff00ff;
-}
-
-.nav-collapse.nav-full ul, 
-.nav-collapse.nav-full a {
-    border: none;
-}
-
-.nav-collapse.nav-compact a {
-    background-color: #ff00ff;
-    border-bottom: none !important;
-    border-top: 1px solid rgba(255, 255, 255, 0.5) !important;
-}
-
-.nav-collapse a:active,
-.nav-collapse .active a {
-    background: rgba(255, 255, 255, 0.4);
-}
-```
-
 ## Props
 
 | Property         | Type                     | Description   | Default      | 
