@@ -139,7 +139,7 @@ The included stylesheet is pretty rudimentary. Typically, you'd want to, at leas
 </style>
 ```
 
-The examples include a more complete [themed version](http://johanneshilden.github.io/impromptu-react-animated-header/public/themed.html) of the navbar, using the following stylesheet.
+    The examples include a more complete [themed version](http://johanneshilden.github.io/impromptu-react-animated-header/public/themed.html) of the navbar, using the [theme.css](https://github.com/johanneshilden/impromptu-react-animated-header/blob/master/public/css/theme.css) stylesheet.
 
 ```CSS
 /* theme.css */
