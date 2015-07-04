@@ -1,5 +1,5 @@
-var React  = require('react');
-var Snabbt = require('react-snabbt');
+var React      = require('react');
+var tweenState = require('react-tween-state');
 
 var Item = React.createClass({
     render: function() { return null; }
@@ -10,58 +10,54 @@ var Brand = React.createClass({
 });
 
 var TopMenu = React.createClass({
+    mixins: [tweenState.Mixin],
     getDefaultProps: function() {
         return {
-            threshold      : 769,
-            duration       : 300,
+            align          : 'left',
+            brandAlign     : 'left',
             autoClose      : true,
+            threshold      : 769,
             cssTransitions : false,
-            animate        : true
-        }
+            animate        : true,
+            duration       : 300 
+        };
     },
     getInitialState: function() {
         var innerWidth = window.innerWidth;
         return {
-            expanded      : false,
-            animateExpand : false,
-            expandOptions : {height: 0, fromHeight: 0},
-            wide          : innerWidth >= this.props.threshold,
-            scrolled      : window.pageYOffset > 1
+            expanded   : false,
+            wide       : innerWidth >= this.props.threshold,
+            scrolled   : window.pageYOffset > 1,
+            maskHeight : 0
         };
     },
     toggleExpanded: function() {
+        var expanded = !this.state.expanded,
+            height = this.refs.anchor.getDOMNode().clientHeight;
         if (true === this.props.animate) {
-            var height = this.refs.anchor.getDOMNode().clientHeight,
-                expand = this.state.expanded;
-            this.setState({
-                expanded       : !expand,
-                animateExpand  : true,
-                expandOptions  : {
-                    height     : expand ? 0 : height,
-                    fromHeight : expand ? height : 0,
-                    easing     : 'ease',
-                    align      : 'right',
-                    duration   : this.props.duration
-                }
+            this.setState({expanded: expanded});
+            this.tweenState('maskHeight', {
+                easing   : tweenState.easingTypes.easeInOutQuad,
+                duration : this.props.duration,
+                endValue : (expanded ? height : 0)
             });
         } else {
-            this.setState({expanded: !this.state.expanded});
+            this.setState({
+                expanded   : expanded,
+                maskHeight : (expanded ? height : 0)
+            });
         }
-    },
-    animationComplete: function() {
-        this.setState({animateExpand: false});
     },
     handleResize: function(e) {
         var innerWidth = window.innerWidth,
             oldWide = this.state.wide,
             newWide = innerWidth >= this.props.threshold;
-        if (true === oldWide && false === newWide) {
+        if (true === this.state.expanded && true === oldWide && false === newWide) {
             this.setState({
-                expanded      : false,
-                animateExpand : false,
-                expandOptions : {height: 0, fromHeight: 0},
-                wide          : innerWidth >= this.props.threshold
-            });
+                expanded   : false,
+                maskHeight : 0,
+                wide       : false
+            })
             return;
         }
         if (oldWide != newWide)
@@ -82,38 +78,37 @@ var TopMenu = React.createClass({
         window.addEventListener('scroll', this.handleScroll);
     },
     render: function() {
+        var brandStyle  = {};
+        var buttonStyle = {};
+        if ('right' === this.props.brandAlign) {
+            brandStyle  = {float: 'right'};
+            buttonStyle = {float: 'left'};
+        }
         var brand = <span />;
-        var navItems = ( 
-            <ul ref="anchor">
-                {React.Children.map(this.props.children, function(item) {
+        var items = 
+            React.Children.map(this.props.children, function(item) {
+                if (item.type === Item) {
                     var onClick = function() {
                         if ('function' === typeof item.props.onClick)
                             item.props.onClick();
                         if (true === this.props.autoClose)
                             this.toggleExpanded();
                     };
-                    if (item.type === Item) {
-                        return (
-                            <li onClick={onClick.bind(this)}>
-                                {item.props.children}
-                            </li>
-                        );
-                    } else if (item.type === Brand) {
-                        var inlineCss = {};
-                        if ('right' === this.props.brandAlign) {
-                            inlineCss = {
-                                float: 'right'
-                            };
-                        }
-                        brand = (
-                            <span style={inlineCss} className={'nav-logo ' + (true === this.state.wide ? 'nav-logo-full' : 'nav-logo-compact')}>
-                                {item.props.children}
-                            </span>
-                        );
-                    }
-                }.bind(this))}
-            </ul>
-        );
+                    return (
+                        <li onClick={onClick.bind(this)}>
+                            {item.props.children}
+                        </li>
+                    );
+                } else if (item.type === Brand) {
+                    brand = (
+                        <span style={brandStyle} className={'nav-logo ' + (true === this.state.wide ? 'nav-logo-full' : 'nav-logo-compact')}>
+                            {item.props.children}
+                        </span>
+                    );
+                } else {
+                    return item;
+                }
+            }.bind(this));
         var animClass = (true === this.props.cssTransitions) ? 'nav-transitions' : '';
         if (true === this.state.wide) {
             var cssClass = this.state.scrolled ? 'sticky' : 'fixed';
@@ -121,43 +116,24 @@ var TopMenu = React.createClass({
                 <header className={animClass ? (cssClass + ' ' + animClass) : cssClass}>
                     {brand}
                     <nav className={'nav-collapse nav-full' + ('right' === this.props.align ? ' nav-right' : '')}>
-                        {navItems}
+                        <ul ref="anchor">
+                            {items}
+                        </ul>
                     </nav>
                 </header>
             );
         } else {
-            var nav = <div />;
-            if (true === this.props.animate) {
-                nav = (
-                    <Snabbt 
-                        options={this.state.expandOptions} 
-                        animate={this.state.animateExpand} 
-                        onComplete={this.animationComplete}>
-                        <div className="mask">
-                            {navItems}
-                        </div>
-                    </Snabbt>
-                );
-            } else {
-                if (true === this.state.expanded) {
-                    nav = (
-                        <div>
-                            {navItems}
-                        </div>
-                    );
-                }
-            }
-            var inlineCss = {};
-            if ('right' === this.props.brandAlign) {
-                inlineCss = {
-                    float: 'left'
-                };
-            }
             return (
                 <header className={animClass}>
                     {brand}
-                    <a style={inlineCss} href="javascript:" onClick={this.toggleExpanded} className={'nav-toggle' + (this.state.expanded ? ' active' : '')}>Menu</a>
-                    <nav className="nav-collapse nav-compact">{nav}</nav>
+                    <a style={buttonStyle} href="javascript:" onClick={this.toggleExpanded} className={'nav-toggle' + (this.state.expanded ? ' active' : '')}>Menu</a>
+                    <nav className="nav-collapse nav-compact">
+                        <div className="mask" style={{height: this.getTweeningValue('maskHeight')}}>
+                            <ul ref="anchor">
+                                {items}
+                            </ul>
+                        </div>
+                    </nav>
                 </header>
             );
         }
