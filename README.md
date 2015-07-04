@@ -20,7 +20,7 @@ $ cp -r node_modules/impromptu-react-animated-header/css/ node_modules/impromptu
 
 ## How to use
 
-Include the module.
+* Include the module.
 
 ```
 var TopMenu   = require('impromptu-react-animated-header').TopMenu;
@@ -28,7 +28,7 @@ var MenuItem  = require('impromptu-react-animated-header').MenuItem;
 var MenuBrand = require('impromptu-react-animated-header').MenuBrand;
 ```
 
-Lay out the menu using the `<TopMenu>` and `<MenuItem>` components. An optional `<MenuBrand>` can be included prior to the menu items.
+* Lay out the menu using the `<TopMenu>` and `<MenuItem>` components. An optional `<MenuBrand>` can be included prior to the menu items.
 
 ```
 <TopMenu>
