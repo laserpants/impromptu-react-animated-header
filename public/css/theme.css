@@ -6,16 +6,9 @@ header {
     background-color: #ff00ff;
 }
 
-.nav-collapse.nav-full ul {
-    border: none;
-}
-
+.nav-collapse.nav-full ul, 
 .nav-collapse.nav-full a {
     border: none;
-}
-
-.nav-collapse.nav-compact a {
-    border;
 }
 
 .nav-collapse.nav-compact a {
