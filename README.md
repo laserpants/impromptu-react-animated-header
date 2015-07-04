@@ -44,7 +44,7 @@ Lay out the menu using the `<TopMenu>` and `<MenuItem>` components. An optional 
 
 #### Full working example
 
-We create the menu component in `main.js`.
+In this example, we create the menu component in `main.js`.
 
 ```javascript
 var React     = require('react');
