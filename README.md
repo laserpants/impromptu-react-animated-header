@@ -10,6 +10,10 @@ http://johanneshilden.github.io/impromptu-react-animated-header/
 $ npm install react-snabbt install impromptu-react-animated-header
 ```
 
+```bash
+$ cp -r node_modules/impromptu-react-animated-header/css/ .
+```
+
 ## How to use
 
 
