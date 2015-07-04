@@ -85,15 +85,15 @@ $ browserify -t reactify main.js -o bundle.js
 
 ## Styling
 
-```
-    <link href="//cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" rel="stylesheet">
-    <link href="css/impromptu-header.min.css" rel="stylesheet">
-    <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
-    <style type="text/css" rel="stylesheet">
-        body { 
-            font-family: "Lato", sans-serif; 
-        }
-    </style>
+```html
+<link href="//cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" rel="stylesheet">
+<link href="css/impromptu-header.min.css" rel="stylesheet">
+<link href="//fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+<style type="text/css" rel="stylesheet">
+    body { 
+        font-family: "Lato", sans-serif; 
+    }
+</style>
 ```
 
 ## Props
@@ -101,10 +101,10 @@ $ browserify -t reactify main.js -o bundle.js
 | Property         | Type                     | Description   | Default      | 
 | ---------------- | ------------------------ | ------------- | ------------ |
 | `autoClose`      | Boolean                  | Controls whether the menu should automatically close when a menu item is clicked.      | true      |
-| `threshold`      |  Number                  |          | 769    |
-| `duration`       |  Number                  |          | 300    |
-| `cssTransitions` |  Boolean                 |          | false  |
-| `animate`        |  Boolean                 |          | true   |
+| `threshold`      |  Number                  | Maximum viewport width for collapsed mode. (in pixels). | 769    |
+| `cssTransitions` |  Boolean                 | Apply CSS classes for CSS transitions? | false  |
+| `animate`        |  Boolean                 | Use animation when opening and closing the menu in collapsed mode? | true   |
+| `duration`       |  Number                  | Duration of the anmation, in milliseconds. | 300    |
 
 ## Contribute
 
