@@ -171,7 +171,7 @@ header {
 | ---------------- | ------------------------ | ------------- | ------------ |
 | `align`          | 'left' | 'right'         | Horizontal alignment of the menu. |
 | `autoClose`      | Boolean                  | Controls whether the menu should automatically close when an item is clicked.      | true      |
-| `threshold`      |  Number                  | Collapse breakpoint: A viewport width less than this value will cause the navbar to collapse. (in pixels). | 769    |
+| `threshold`      |  Number                  | Collapse breakpoint: A viewport width less than this value will cause the navbar to collapse (in pixels). | 769    |
 | `cssTransitions` |  Boolean                 | Apply CSS classes for transitions? | false  |
 | `animate`        |  Boolean                 | Animate opening and closing of the menu in collapsed mode? | true   |
 | `duration`       |  Number                  | Duration of the anmation, in milliseconds. | 300    |
@@ -179,6 +179,8 @@ header {
 ### CSS Transitions
 
 ## Contribute
+
+Fork, submit pull requests or report any issues: https://github.com/johanneshilden/impromptu-react-animated-header
 
 ## License
 
