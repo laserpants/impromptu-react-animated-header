@@ -83,7 +83,7 @@ var TopMenu = React.createClass({
     },
     render: function() {
         var brand = <span />;
-        var navItems = (
+        var navItems = ( 
             <ul ref="anchor">
                 {React.Children.map(this.props.children, function(item) {
                     var onClick = function() {
@@ -99,8 +99,14 @@ var TopMenu = React.createClass({
                             </li>
                         );
                     } else if (item.type === Brand) {
+                        var inlineCss = {};
+                        if ('right' === this.props.brandAlign) {
+                            inlineCss = {
+                                float: 'right'
+                            };
+                        }
                         brand = (
-                            <span className={'nav-logo ' + (true === this.state.wide ? 'nav-logo-full' : 'nav-logo-compact')}>
+                            <span style={inlineCss} className={'nav-logo ' + (true === this.state.wide ? 'nav-logo-full' : 'nav-logo-compact')}>
                                 {item.props.children}
                             </span>
                         );
@@ -141,10 +147,16 @@ var TopMenu = React.createClass({
                     );
                 }
             }
+            var inlineCss = {};
+            if ('right' === this.props.brandAlign) {
+                inlineCss = {
+                    float: 'left'
+                };
+            }
             return (
                 <header className={animClass}>
                     {brand}
-                    <a href="javascript:" onClick={this.toggleExpanded} className={'nav-toggle' + (this.state.expanded ? ' active' : '')}>Menu</a>
+                    <a style={inlineCss} href="javascript:" onClick={this.toggleExpanded} className={'nav-toggle' + (this.state.expanded ? ' active' : '')}>Menu</a>
                     <nav className="nav-collapse nav-compact">{nav}</nav>
                 </header>
             );
