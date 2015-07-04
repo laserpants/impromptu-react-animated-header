@@ -159,7 +159,7 @@ The examples include a more complete [themed version](http://johanneshilden.gith
 | `brandAlign`     | 'left'&nbsp;&vert;&nbsp;'right'         | Position of the logo, if one is used. | 'left'
 | `autoClose`      | Boolean                  | Controls whether the menu should automatically close when an item is clicked.      | true      |
 | `threshold`      |  Number                  | Collapse breakpoint: A viewport width less than this value will cause the navbar to collapse (in pixels). | 769    |
-| `cssTransitions` |  Boolean                 | Apply CSS classes for transitions? | false  |
+| `cssTransitions` |  Boolean                 | Apply CSS classes for transitions? (See [examples](http://johanneshilden.github.io/impromptu-react-animated-header/public/default.html)) | false  |
 | `animate`        |  Boolean                 | Animate opening and closing of the menu in collapsed mode? | true   |
 | `duration`       |  Number                  | Duration of the anmation, in milliseconds. | 300    |
 
