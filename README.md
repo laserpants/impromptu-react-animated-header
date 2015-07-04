@@ -1,6 +1,6 @@
 # Impromptu React Animated Header
 
-A responsive nav header component for React.
+> A responsive nav header component for React.
 
 [Try it](http://johanneshilden.github.io/impromptu-react-animated-header/) before you browserify it.
 
@@ -12,7 +12,7 @@ Npm is the recommended install method.
 $ npm install impromptu-react-animated-header
 ```
 
-Copy CSS files and icons to proper location. 
+Copy CSS files and icons to a suitable location. 
 
 ```bash
 $ cp -r node_modules/impromptu-react-animated-header/css/ node_modules/impromptu-react-animated-header/icons/ .
@@ -20,7 +20,31 @@ $ cp -r node_modules/impromptu-react-animated-header/css/ node_modules/impromptu
 
 ## How to use
 
-We create a menu in `main.js`.
+Lay out the menu using the `<TopMenu>` and `<MenuItem>` components. An optional `<MenuBrand>` can be included before the menu items.
+
+```
+<TopMenu>
+    <MenuBrand>
+        <a href="#home">Navigation</a>
+    </MenuBrand>
+    <MenuItem>
+        <a href="#home">Home</a>
+    </MenuItem>
+    <MenuItem>
+        <a href="#about">About</a>
+    </MenuItem>
+    <MenuItem>
+        <a href="#configuration">Configuration</a>
+    </MenuItem>
+    <MenuItem>
+        <a href="#contribute">Contribute</a>
+    </MenuItem>
+ </TopMenu>
+```
+
+#### Full working example
+
+We create the menu component in `main.js`.
 
 ```javascript
 var React     = require('react');
@@ -33,19 +57,19 @@ var MyMenu = React.createClass({
         return (
             <TopMenu>
                 <MenuBrand>
-                    <a data-scroll href="#home">Navigation</a>
+                    <a href="#home">Navigation</a>
                 </MenuBrand>
                 <MenuItem>
-                    <a data-scroll href="#home">Home</a>
+                    <a href="#home">Home</a>
                 </MenuItem>
                 <MenuItem>
-                    <a data-scroll href="#about">About</a>
+                    <a href="#about">About</a>
                 </MenuItem>
                 <MenuItem>
-                    <a data-scroll href="#configuration">Configuration</a>
+                    <a href="#configuration">Configuration</a>
                 </MenuItem>
                 <MenuItem>
-                    <a data-scroll href="#contribute">Contribute</a>
+                    <a href="#contribute">Contribute</a>
                 </MenuItem>
              </TopMenu>
         );
@@ -85,7 +109,7 @@ $ browserify -t reactify main.js -o bundle.js
 
 ## Styling
 
-The included stylesheet is pretty rudimentary. Typically, you'd want to, at least, overridea the default font and align the colors with those used in  your application.
+The included stylesheet is pretty rudimentary. Typically, you'd want to, at least, overridea the default font and align the colors with those used in your application.
 
 ```html
 <link href="//cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" rel="stylesheet">
@@ -143,6 +167,7 @@ header {
 
 | Property         | Type                     | Description   | Default      | 
 | ---------------- | ------------------------ | ------------- | ------------ |
+| `align`          | 'left' | 'right'         | Horizontal alignment of the menu. |
 | `autoClose`      | Boolean                  | Controls whether the menu should automatically close when an item is clicked.      | true      |
 | `threshold`      |  Number                  | Collapse breakpoint: A viewport width less than this value will cause the navbar to collapse. (in pixels). | 769    |
 | `cssTransitions` |  Boolean                 | Apply CSS classes for transitions? | false  |
