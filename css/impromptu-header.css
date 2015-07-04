@@ -180,7 +180,7 @@ header.nav-transitions.fixed .nav-collapse.nav-full ul li a {
 header.nav-transitions.fixed .nav-logo {
     font-size: 1.4em;
     margin: 0 2em;
-    padding: .8em 0;
-    line-height: 48px;
+    padding: .74em 0;
+    line-height: 46px;
     transition: all 0.1s linear; 
 }

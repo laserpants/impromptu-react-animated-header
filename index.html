@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>React Impromptu Animated Header</title>
+    <link href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+    <style type="text/css" rel="stylesheet">
+        iframe {
+            display: block;
+            position:relative;
+            top: 0;
+            left: 0;
+            padding: 0;
+            border: none;
+            background: white;
+        }
+        .wrapper {
+            top: 0;
+            left: 0;
+            position: absolute;
+            width: 960px;
+            height: 100%;
+            display:block;
+            background-color: #999;
+        }
+        .options {
+            position: absolute; 
+            right: 20px; 
+            top: 20px;
+        }
+        body { 
+            font-family: "Lato", sans-serif; 
+            background-color: #f4f4f4;
+        }
+        a {
+            text-decoration: none;
+            color: #555;
+            border: 1px solid #aaa;
+            padding: 0.5em 0.5em 0.7em 0.5em;
+            background: #fff;
+        }
+    </style>
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+    <script>
+        $(function() {
+            $("iframe").width($("div").width()-15).height($("div").height());
+            $(".wrapper").resizable({
+                handles: 'e',
+                resize: function (event, ui) {
+                    var newWd = ui.size.width - 15;
+                    var newHt = ui.size.height;
+                    $("iframe").width(newWd).height(newHt);
+                },
+                stop: function( event, ui ) {
+                    $("iframe").css("pointer-events","auto");   
+                },
+                start: function( event, ui ) {
+                    $("iframe").css("pointer-events","none");  
+                },
+            }); 
+        });
+    </script>
+</head>
+<body>
+    <div class="wrapper">
+        <iframe name="frame" src="public/default.html"></iframe>
+    </div>
+    <div class="options">
+        <a href="public/default.html" target="frame">Default</a>
+        <a href="public/simple.html" target="frame">Simple</a>
+        <a href="public/themed.html" target="frame">Themed</a>
+    </div>
+</body>
+</html>
