@@ -6,11 +6,18 @@ http://johanneshilden.github.io/impromptu-react-animated-header/
 
 ## Installation
 
+> $ npm install react-snabbt install impromptu-react-animated-header
+
 ## How to use
+
 
 ## Styling
 
 ## Props
+
+    | Property        | Type                     | Description   | Default      | 
+    | --------------- | ------------------------ | ------------- | ------------ |
+    | `autoClose`     | Boolean                  | Controls whether the menu should automatically close when a menu item is clicked.      | false      |
 
 ## Contribute
 
