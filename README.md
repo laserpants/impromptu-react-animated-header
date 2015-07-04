@@ -100,11 +100,13 @@ $ browserify -t reactify main.js -o bundle.js
 
 | Property         | Type                     | Description   | Default      | 
 | ---------------- | ------------------------ | ------------- | ------------ |
-| `autoClose`      | Boolean                  | Controls whether the menu should automatically close when a menu item is clicked.      | true      |
-| `threshold`      |  Number                  | Maximum viewport width for collapsed mode. (in pixels). | 769    |
-| `cssTransitions` |  Boolean                 | Apply CSS classes for CSS transitions? | false  |
-| `animate`        |  Boolean                 | Use animation when opening and closing the menu in collapsed mode? | true   |
+| `autoClose`      | Boolean                  | Controls whether the menu should automatically close when an item is clicked.      | true      |
+| `threshold`      |  Number                  | Collapse breakpoint: A viewport width less than this value will cause the navbar to collapse. (in pixels). | 769    |
+| `cssTransitions` |  Boolean                 | Apply CSS classes for transitions? | false  |
+| `animate`        |  Boolean                 | Animate opening and closing of the menu in collapsed mode? | true   |
 | `duration`       |  Number                  | Duration of the anmation, in milliseconds. | 300    |
+
+### CSS Transitions
 
 ## Contribute
 
