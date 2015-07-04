@@ -151,6 +151,8 @@ The examples include a more complete [themed version](http://johanneshilden.gith
 
 ## Props
 
+`TopMenu` supports a number of props:
+
 | Property         | Type                     | Description   | Default      | 
 | ---------------- | ------------------------ | ------------- | ------------ |
 | `align`          | 'left'&nbsp;&vert;&nbsp;'right'         | Horizontal alignment of the menu. | 'left'
