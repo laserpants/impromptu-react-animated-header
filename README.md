@@ -20,6 +20,14 @@ $ cp -r node_modules/impromptu-react-animated-header/css/ node_modules/impromptu
 
 ## How to use
 
+Include the module.
+
+```
+var TopMenu   = require('impromptu-react-animated-header').TopMenu;
+var MenuItem  = require('impromptu-react-animated-header').MenuItem;
+var MenuBrand = require('impromptu-react-animated-header').MenuBrand;
+```
+
 Lay out the menu using the `<TopMenu>` and `<MenuItem>` components. An optional `<MenuBrand>` can be included before the menu items.
 
 ```
@@ -146,6 +154,7 @@ The examples include a more complete [themed version](http://johanneshilden.gith
 | Property         | Type                     | Description   | Default      | 
 | ---------------- | ------------------------ | ------------- | ------------ |
 | `align`          | 'left'&nbsp;&vert;&nbsp;'right'         | Horizontal alignment of the menu. |
+| `brandAlign`     | 'left'&nbsp;&vert;&nbsp;'right'         | Position of the logo, if one is used. |
 | `autoClose`      | Boolean                  | Controls whether the menu should automatically close when an item is clicked.      | true      |
 | `threshold`      |  Number                  | Collapse breakpoint: A viewport width less than this value will cause the navbar to collapse (in pixels). | 769    |
 | `cssTransitions` |  Boolean                 | Apply CSS classes for transitions? | false  |
