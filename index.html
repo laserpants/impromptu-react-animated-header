@@ -42,6 +42,18 @@
             padding: 0.5em 0.5em 0.7em 0.5em;
             background: #fff;
         }
+        .ui-resizable-e {
+            width: 20px;
+        }
+        .drag-handle {
+            text-align: center; 
+            right: 2px; 
+            position:absolute; 
+            top: 43%; 
+            color: #ffffff; 
+            font-size: 240%; 
+            font-weight: bold;
+        }
     </style>
     <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
     <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
@@ -67,6 +79,7 @@
 </head>
 <body>
     <div class="wrapper">
+        <div class="drag-handle">&#8285;</div>
         <iframe name="frame" src="public/default.html"></iframe>
     </div>
     <div class="options">
