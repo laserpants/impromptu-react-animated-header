@@ -1,8 +1,6 @@
 # Impromptu React Animated Header
 
-Responsive nav header component for React.
-
-### What is it?
+A responsive nav header component for React.
 
 [Try it](http://johanneshilden.github.io/impromptu-react-animated-header/) before you browserify it.
 
@@ -14,7 +12,7 @@ Npm is the recommended install method.
 $ npm install impromptu-react-animated-header
 ```
 
-Copy CSS files and icons to build location.
+Copy CSS files and icons to proper location. 
 
 ```bash
 $ cp -r node_modules/impromptu-react-animated-header/css/ node_modules/impromptu-react-animated-header/icons/ .
@@ -22,26 +20,7 @@ $ cp -r node_modules/impromptu-react-animated-header/css/ node_modules/impromptu
 
 ## How to use
 
-`index.html`
-
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>React Impromptu Animated Header</title>
-    <link href="css/impromptu-header.min.css" rel="stylesheet">
-</head>
-<body>
-    <div id="anchor"></div>
-    <script src="bundle.js"></script>
-</body>
-</html>
-```
-
-`main.js`
+We create a menu in `main.js`.
 
 ```javascript
 var React     = require('react');
@@ -79,11 +58,34 @@ React.render(
 );
 ```
 
+Make sure `index.html` includes `impromptu-header.min.css`.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>React Impromptu Animated Header</title>
+    <link href="css/impromptu-header.min.css" rel="stylesheet">
+</head>
+<body>
+    <div id="anchor"></div>
+    <script src="bundle.js"></script>
+</body>
+</html>
+```
+
+Build the example, e.g., using Browserify:
+
 ```bash
 $ browserify -t reactify main.js -o bundle.js 
 ```
 
 ## Styling
+
+The included stylesheet is pretty rudimentary. Typically, you'd want to, at least, overridea the default font and align the colors with those used in  your application.
 
 ```html
 <link href="//cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" rel="stylesheet">
@@ -93,7 +95,48 @@ $ browserify -t reactify main.js -o bundle.js
     body { 
         font-family: "Lato", sans-serif; 
     }
+    header {
+        background-color: #4eb1ba;         /* Nav background color */
+    }
+    .nav-collapse.nav-compact a {
+        background-color: #3ea1aa;         /* Background of drop-down in collapsed mode */
+    }
+    .nav-collapse.nav-full ul, 
+    .nav-collapse.nav-full a,
+    .nav-collapse.nav-compact a {
+        border-color: #5ec1ca !important;  /* Divider lines */
+    }
+    .nav-collapse a:active,
+    .nav-collapse .active a {
+        background-color: #5ec1ca;         /* Active state background color */
+    }
 </style>
+```
+
+The examples include a more complete [themed version](http://johanneshilden.github.io/impromptu-react-animated-header/public/themed.html) of the navbar, using the following stylesheet.
+
+```CSS
+/* theme.css */
+
+header {
+    background-color: #ff00ff;
+}
+
+.nav-collapse.nav-full ul, 
+.nav-collapse.nav-full a {
+    border: none;
+}
+
+.nav-collapse.nav-compact a {
+    background-color: #ff00ff;
+    border-bottom: none !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.5) !important;
+}
+
+.nav-collapse a:active,
+.nav-collapse .active a {
+    background: rgba(255, 255, 255, 0.4);
+}
 ```
 
 ## Props
