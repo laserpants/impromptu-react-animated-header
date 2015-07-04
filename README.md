@@ -2,7 +2,7 @@
 
 Responsive nav header component for React.
 
-http://johanneshilden.github.io/impromptu-react-animated-header/
+[Try it](http://johanneshilden.github.io/impromptu-react-animated-header/) before you apply it.
 
 ## Installation
 
