@@ -22,6 +22,8 @@ $ cp -r node_modules/impromptu-react-animated-header/css/ node_modules/impromptu
 
 ## How to use
 
+`index.html`
+
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -38,6 +40,8 @@ $ cp -r node_modules/impromptu-react-animated-header/css/ node_modules/impromptu
 </body>
 </html>
 ```
+
+`main.js`
 
 ```javascript
 var React     = require('react');
@@ -73,6 +77,10 @@ React.render(
     <MyMenu />,
     document.getElementById('anchor')
 );
+```
+
+```bash
+$ browserify -t reactify main.js -o bundle.js 
 ```
 
 ## Styling
