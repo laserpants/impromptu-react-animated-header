@@ -28,7 +28,7 @@ var MenuItem  = require('impromptu-react-animated-header').MenuItem;
 var MenuBrand = require('impromptu-react-animated-header').MenuBrand;
 ```
 
-Lay out the menu using the `<TopMenu>` and `<MenuItem>` components. An optional `<MenuBrand>` can be included before the menu items.
+Lay out the menu using the `<TopMenu>` and `<MenuItem>` components. An optional `<MenuBrand>` can be included prior to the menu items.
 
 ```
 <TopMenu>
