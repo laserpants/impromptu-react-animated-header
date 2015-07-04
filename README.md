@@ -178,8 +178,6 @@ header {
 | `animate`        |  Boolean                 | Animate opening and closing of the menu in collapsed mode? | true   |
 | `duration`       |  Number                  | Duration of the anmation, in milliseconds. | 300    |
 
-### CSS Transitions
-
 ## Contribute
 
 Fork, submit pull requests or report any issues: https://github.com/johanneshilden/impromptu-react-animated-header
