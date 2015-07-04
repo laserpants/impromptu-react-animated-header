@@ -153,8 +153,8 @@ The examples include a more complete [themed version](http://johanneshilden.gith
 
 | Property         | Type                     | Description   | Default      | 
 | ---------------- | ------------------------ | ------------- | ------------ |
-| `align`          | 'left'&nbsp;&vert;&nbsp;'right'         | Horizontal alignment of the menu. |
-| `brandAlign`     | 'left'&nbsp;&vert;&nbsp;'right'         | Position of the logo, if one is used. |
+| `align`          | 'left'&nbsp;&vert;&nbsp;'right'         | Horizontal alignment of the menu. | 'left'
+| `brandAlign`     | 'left'&nbsp;&vert;&nbsp;'right'         | Position of the logo, if one is used. | 'left'
 | `autoClose`      | Boolean                  | Controls whether the menu should automatically close when an item is clicked.      | true      |
 | `threshold`      |  Number                  | Collapse breakpoint: A viewport width less than this value will cause the navbar to collapse (in pixels). | 769    |
 | `cssTransitions` |  Boolean                 | Apply CSS classes for transitions? | false  |
