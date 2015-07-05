@@ -2,6 +2,8 @@
 
 A responsive nav header component for React.
 
+![animation](animation.gif)
+
 Try before you browserify: http://johanneshilden.github.io/impromptu-react-animated-header/
 
 ## Installation
