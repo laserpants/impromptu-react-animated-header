@@ -4,7 +4,7 @@ A responsive nav header component for React.
 
 ![animation](animation.gif)
 
-Try before you browserify: http://johanneshilden.github.io/impromptu-react-animated-header/
+Try before you browserify: http://laserpants.github.io/impromptu-react-animated-header/
 
 ## Installation
 
@@ -149,7 +149,7 @@ The included stylesheet is pretty rudimentary. Typically, you'd want to, at leas
 </style>
 ```
 
-The examples include a more complete [themed version](http://johanneshilden.github.io/impromptu-react-animated-header/public/themed.html) of the navbar, using the [theme.css](https://github.com/johanneshilden/impromptu-react-animated-header/blob/master/public/css/theme.css) stylesheet.
+The examples include a more complete [themed version](http://laserpants.github.io/impromptu-react-animated-header/public/themed.html) of the navbar, using the [theme.css](https://github.com/laserpants/impromptu-react-animated-header/blob/master/public/css/theme.css) stylesheet.
 
 ## Props
 
@@ -161,13 +161,13 @@ The examples include a more complete [themed version](http://johanneshilden.gith
 | `brandAlign`     | 'left'&nbsp;&vert;&nbsp;'right'         | Position of the logo, if one is used. | 'left'
 | `autoClose`      | Boolean                  | Controls whether the menu should automatically close when an item is clicked.      | true      |
 | `threshold`      |  Number                  | Collapse breakpoint: A viewport width less than this value will cause the navbar to collapse (in pixels). | 769    |
-| `cssTransitions` |  Boolean                 | Apply CSS classes for transitions? (See [examples](http://johanneshilden.github.io/impromptu-react-animated-header/public/default.html)) | false  |
+| `cssTransitions` |  Boolean                 | Apply CSS classes for transitions? (See [examples](http://laserpants.github.io/impromptu-react-animated-header/public/default.html)) | false  |
 | `animate`        |  Boolean                 | Animate opening and closing of the menu in collapsed mode? | true   |
 | `duration`       |  Number                  | Duration of the anmation, in milliseconds. | 300    |
 
 ## Contribute
 
-Fork, submit pull requests or report any issues: https://github.com/johanneshilden/impromptu-react-animated-header
+Fork, submit pull requests or report any issues: https://github.com/laserpants/impromptu-react-animated-header
 
 ## License
 
